@@ -1,8 +1,10 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib as plt
 import io 
+import matplotlib
+matplotlib.use("Agg")  # prevent cloud rendering issues
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Analyze Your Data",page_icon="📊",layout="wide")
 
@@ -157,4 +159,5 @@ if upload_file is not None:
         st.pyplot(fig)
 
 else:
+
     st.info("Please upload a csv or excel file to get started")
